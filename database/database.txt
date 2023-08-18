@@ -1,10 +1,7 @@
 Marktplaats
 
    Users
-     -id
-     -name
-     -email
-     -password
+     breeze
 
    Products
      -id
