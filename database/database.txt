@@ -1,0 +1,30 @@
+Marktplaats
+
+   Users
+     -id
+     -name
+     -email
+     -password
+
+   Products
+     -id
+     -user_id
+     -title
+     -slug
+     -description
+     -price
+
+   Categories
+     -id
+     -name
+
+   Products_categories
+     -id
+     -product_id
+     -category_id
+
+   Messages
+     -id
+     -user_id
+     -product_id
+     -message
