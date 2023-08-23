@@ -17,7 +17,8 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->text('description');
-            $table->float('price', 6, 2);
+            $table->string('image')->default("");
+            $table->float('price', 6, 2)->default();
             $table->timestamps();
         });
     }

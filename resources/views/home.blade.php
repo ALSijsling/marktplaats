@@ -1,32 +1,15 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        @vite('resources/css/app.css')
-
-        <title>Marktplaats</title>
-
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-    </head>
+    <x-head></x-head>
     
-    <body>
-        <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 selection:bg-red-500 selection:text-white">
-            @if (Route::has('login'))
-                <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900">Register</a>
-                        @endif
-                    @endauth
+    <x-body>
+        <div class="lg:m-10 w-full text-center text-gray-600">
+            @foreach ($products as $product)
+                <div class="sm:w-full md:w-1/2 lg:w-1/4 xl:w-1/6 p-4 bg-white shadow rounded-md">
+                    <a href="/products/{{ $product->slug }}" class="font-bold hover:text-gray-900">{{ $product->title }}</a>
+                    <article class="pt-6">{{ $product->description }}</article>
                 </div>
-            @endif
+            @endforeach
         </div>
-    </body>
+    </x-body>
 </html>

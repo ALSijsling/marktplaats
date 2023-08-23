@@ -4,3 +4,5 @@
 - installed breeze
 - created database migrations
 - created models and added relationships
+- user can a new product
+- index and show page for product
