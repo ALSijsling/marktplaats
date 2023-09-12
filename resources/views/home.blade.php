@@ -10,10 +10,10 @@
                         <article class="bg-slate-100 flex max-w-xl flex-col items-start justify-between p-6 rounded-2xl">
                             <div class="relative mb-6 flex items-center gap-x-4">
                                 <!-- change image -->
-                                <img src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="h-10 w-10 rounded-full bg-gray-50">
+                                <img class="h-10 w-10 rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
                                 <div class="text-sm leading-6">
                                     <a href="/products/{{$product->slug}}">
-                                        <h3 class="ml-2 text-lg font-semibold leading-6 text-gray-600 group-hover:text-gray-800">
+                                        <h3 class="ml-2 text-lg font-semibold text-gray-600 group-hover:text-gray-800">
                                             {{$product->title}}
                                         </h3>
                                     </a>
@@ -25,7 +25,13 @@
                                 <a href="#" class="relative z-10 rounded-full bg-slate-200 px-3 py-1.5 font-medium text-gray-600 hover:bg-slate-300">Marketing</a>
                             </div>
                             <div class="group relative">
-                                <p class="mt-5 line-clamp-5 text-sm leading-6 text-gray-600">{{$product->description}}</p>
+                                <p class="mt-4">
+                                    <!-- add user-link -->
+                                    <a href="#">
+                                        <i class='fas fa-user-circle' style='font-size:20px;color:dimgrey'></i><span class="ml-1 text-gray-600 hover:text-gray-900">{{$product->user->name}}</span>
+                                    </a>
+                                </p>
+                                <p class="mt-4 line-clamp-5 text-sm text-gray-600">{{$product->description}}</p>
                             </div>
                         </article>
                     @endforeach

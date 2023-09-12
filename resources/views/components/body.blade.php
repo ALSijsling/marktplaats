@@ -3,7 +3,7 @@
             
         @if (Route::has('login'))
             <div class="sm:sticky sm:top-0 sm:right-0 p-6 w-full text-right bg-white shadow">
-                <a class="float-left top-5 left-5" href="{{ route('home') }}"><i class="fa fa-shopping-bag" style="font-size:24px;color:dimgrey"></i></a>
+                <a class="float-left top-5 left-5" href="{{ route('home') }}"><x-application-logo></x-application-logo></a>
                 @auth
                     <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900">Dashboard</a>
                 @else
