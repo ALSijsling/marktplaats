@@ -5,7 +5,7 @@
     <x-body>
         <div class="py-24 sm:py-32">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                <div class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+                <div class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 md:grid-cols-2 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4">
                     @foreach ($products as $product)
                         <article class="bg-slate-100 flex max-w-xl flex-col items-start justify-between p-6 rounded-2xl">
                             <div class="relative mb-6 flex items-center gap-x-4">
@@ -26,10 +26,7 @@
                             </div>
                             <div class="group relative">
                                 <p class="mt-4">
-                                    <!-- add user-link -->
-                                    <a href="#">
-                                        <i class='fas fa-user-circle' style='font-size:20px;color:dimgrey'></i><span class="ml-1 text-gray-600 hover:text-gray-900">{{$product->user->name}}</span>
-                                    </a>
+                                    <i class='fas fa-user-circle' style='font-size:20px;color:dimgrey'></i><span class="ml-1 text-gray-600 hover:text-gray-900">{{$product->user->name}}</span>
                                 </p>
                                 <p class="mt-4 line-clamp-5 text-sm text-gray-600">{{$product->description}}</p>
                             </div>

@@ -43,16 +43,26 @@ class ProductController extends Controller
 
     public function edit(Product $product)
     {
-        //
+        return view('products.edit', [
+            'product' => $product
+        ]);
     }
 
     public function update(UpdateProductRequest $request, Product $product)
     {
-        //
+        $attributes = $request->validated();
+
+        $attributes['slug'] = Str::slug($attributes['title']);
+
+        $product->update($attributes);
+
+        return redirect('/dashboard');
     }
 
     public function destroy(Product $product)
     {
-        //
+        $product->delete();
+
+        return redirect('/dashboard');
     }
 }
