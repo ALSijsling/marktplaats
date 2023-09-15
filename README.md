@@ -8,3 +8,4 @@
 - index and show page for product
 - user can see their products
 - added edit and delete function
+- user can bid on products
