@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\BidController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/dashboard', [ProfileController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
@@ -10,6 +12,8 @@ Route::get('/dashboard', [ProfileController::class, 'index'])->middleware(['auth
 Route::resource('/products', ProductController::class)->except('index', 'show');
 Route::get('/home', [ProductController::class, 'index'])->name('home');
 Route::get('/products/{product:slug}', [ProductController::class, 'show']);
+Route::get('/categories/{category:slug}', [CategoryController::class, 'show'])->name('categories.show');
+Route::get('/users/{user}', [UserController::class, 'show'])->name('users.show');
 
 Route::post('/bids', [BidController::class, 'store'])->name('bids.store')->middleware('auth');
 

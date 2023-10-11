@@ -21,12 +21,15 @@
                             </div>
                             <div class="flex items-center gap-x-4 text-xs">
                                 <time datetime="2020-03-16" class="text-gray-500">{{$product->updated_at}}</time>
-                                <!-- change category -->
-                                <a href="#" class="relative z-10 rounded-full bg-slate-200 px-3 py-1.5 font-medium text-gray-600 hover:bg-slate-300">Marketing</a>
+                                @foreach($product->categories as $category)
+                                    <a href="{{route('categories.show', ['category' => $category])}}" class="relative z-10 rounded-full bg-slate-200 px-3 py-1.5 font-medium text-gray-600 hover:bg-slate-300">{{$category->name}}</a>
+                                @endforeach
                             </div>
                             <div class="group relative">
                                 <p class="mt-4">
-                                    <i class='fas fa-user-circle' style='font-size:20px;color:dimgrey'></i><span class="ml-1 text-gray-600 hover:text-gray-900">{{$product->user->name}}</span>
+                                    <a href="{{route('users.show', ['user' => $product->user])}}">
+                                        <i class='fas fa-user-circle' style='font-size:20px;color:dimgrey'></i><span class="ml-1 text-gray-600 hover:text-gray-900">{{$product->user->name}}</span>
+                                    </a>
                                 </p>
                                 <p class="mt-4 line-clamp-5 text-sm text-gray-600">{{$product->description}}</p>
                             </div>
