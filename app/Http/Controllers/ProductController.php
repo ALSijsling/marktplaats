@@ -13,7 +13,7 @@ class ProductController extends Controller
     public function index()
     {
         return view('home', [
-            'products' => Product::all()
+            'products' => Product::orderByDesc('created_at')->get()
         ]);
     }
 

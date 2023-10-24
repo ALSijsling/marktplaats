@@ -11,3 +11,4 @@
 - user can bid on products
 - created factories and database seeder
 - update home and product page with links
+- added price

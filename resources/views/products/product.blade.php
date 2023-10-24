@@ -12,13 +12,14 @@
                     <i class='fas fa-user-circle' style='font-size:20px;color:dimgrey'></i><span class="ml-1 text-gray-600 hover:text-gray-900">{{$product->user->name}}</span>
                 </a>
             </p>
-            <article class="mt-6">{{ $product->description }}</article>
+            <article class="mt-4">{{ $product->description }}</article>
+            <p class="mt-4">&euro; {{$product->price}}</p>
         </div>
         <div class="lg:w-2/5 mx-auto sm:my-8 p-4 text-center text-gray-600 rounded-md bg-slate-100 shadow">
             <h3 class="text-lg font-bold">Bids</h3>
             <ul>
                 @foreach ($product->bids as $bid)
-                    <li>&euro; {{$bid->price}}</li>
+                    <li>&euro; {{$bid->price}} by {{$bid->user->name}}</li>
                 @endforeach
             </ul>
             @auth

@@ -8,34 +8,41 @@
     <div class="bg-slate-300 py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-slate-100 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-600">
+                <div class="mx-6 mb-6 text-gray-600">
                     <form method="POST" action="{{route('products.update', ['product' => $product])}}">
                         @method('PATCH')
                         @csrf
 
                         <!-- Title -->
-                        <div>
+                        <x-form-input>
                             <x-input-label for="title" :value="__('Title')" />
                             <x-text-input id="title" class="block mt-1 w-full" type="text" name="title" :value="$product->title" required autofocus autocomplete="title" />
                             <x-input-error :messages="$errors->get('title')" class="mt-2" />
-                        </div>
+                        </x-form-input>
 
                         <!-- Description -->
-                        <div>
+                        <x-form-input>
                             <x-input-label for="description" :value="__('Description')" />
                             <x-textarea-input id="description" rows="10" class="block mt-1 w-full" name="description" :value="old('description')" required>{{$product->description}}</x-textarea-input>
                             <x-input-error :messages="$errors->get('description')" class="mt-2" />
-                        </div>
+                        </x-form-input>
 
                         <!-- Image -->
 
                         <!-- Category -->
 
-                        <div class="mt-4">
+                        <!-- Price -->
+                        <x-form-input>
+                            <x-input-label for="price" :value="__('Your Minimum Price')" />
+                            <x-text-input id="price" class="block mt-1 w-full" type="number" name="price" min="0" max="9999.99" step="0.01" :value="$product->price" required />
+                            <x-input-error :messages="$errors->get('price')" class="mt-2" />
+                        </x-form-input>
+
+                        <x-form-input>
                             <x-primary-button>
                                 {{ __('Place Product')}}
                             </x-primary-button>
-                        </div>
+                        </x-form-input>
                     </form>
                 </div>
             </div>

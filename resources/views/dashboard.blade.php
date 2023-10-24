@@ -19,6 +19,10 @@
                                         <a href="/products/{{$product->slug}}">
                                             <h3 class="text-md font-semibold">{{$product->title}}</h3>
                                         </a>
+                                        <div class="inline-flex text-gray-500 text-xs">
+                                            <time>{{$product->updated_at->toDateString()}}</time>
+                                            <p class="ml-6">&euro; {{$product->price}}</p>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="flex-row sm:flex-col sm:items-end">
