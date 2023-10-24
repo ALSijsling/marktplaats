@@ -13,3 +13,4 @@
 - update home and product page with links
 - added price
 - added categories
+- added search function

@@ -5,6 +5,13 @@
     <x-body>
         <div class="py-24 sm:py-32">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                <div class="mx-auto">
+                    <!-- SearchBar -->
+                    <form id="searchBar" method="GET" action="#">
+                        <x-text-input type="text" name="search" placeholder="Search.." value="{{request('search')}}" />
+                        <button type="submit"><i class="fa fa-fw fa-search"></i></button>
+                    </form>
+                </div>
                 <div class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 md:grid-cols-2 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4">
                     @foreach ($products as $product)
                         <article class="bg-slate-100 text-gray-600 flex max-w-xl flex-col items-start justify-between p-6 rounded-2xl">
