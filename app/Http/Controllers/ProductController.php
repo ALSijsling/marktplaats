@@ -29,7 +29,7 @@ class ProductController extends Controller
         $attributes['user_id'] = auth()->id();
         $attributes['slug'] = Str::slug($attributes['title']);
 
-        Product::create($attributes);
+        $product = Product::create($attributes);
 
         return redirect('dashboard');
     }

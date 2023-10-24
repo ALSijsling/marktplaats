@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('description');
             $table->string('image')->default("");
             $table->decimal('price', 6, 2)->default();
+            $table->string('category');
             $table->timestamps();
         });
     }

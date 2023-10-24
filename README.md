@@ -12,3 +12,4 @@
 - created factories and database seeder
 - update home and product page with links
 - added price
+- added categories

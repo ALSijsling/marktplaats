@@ -21,9 +21,7 @@
                             </div>
                             <div class="flex items-center gap-x-4 text-xs">
                                 <time class="text-gray-500">{{$product->updated_at->toDateString()}}</time>
-                                @foreach($product->categories as $category)
-                                    <a href="{{route('categories.show', ['category' => $category])}}" class="relative z-10 rounded-full bg-slate-200 px-3 py-1.5 font-medium hover:bg-slate-300">{{$category->name}}</a>
-                                @endforeach
+                                    <a href="{{route('categories.show', ['category' => $product->category])}}" class="relative z-10 rounded-full bg-slate-200 px-3 py-1.5 font-medium hover:bg-slate-300">{{$product->category}}</a>
                             </div>
                             <div class="group relative">
                                 <p class="mt-4">

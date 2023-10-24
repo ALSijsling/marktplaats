@@ -30,6 +30,15 @@
                         <!-- Image -->
 
                         <!-- Category -->
+                        <x-form-input>
+                            <x-input-label for="category" :value="__('Category')" />
+                            <x-text-input list="category" name="category" :value="$product->category" required />
+                                <datalist id="category">
+                                    @foreach (\App\Models\Category::all() as $category)
+                                        <option value="{{$category->name}}"></option>
+                                    @endforeach
+                                </datalist>
+                        </x-form-input>
 
                         <!-- Price -->
                         <x-form-input>

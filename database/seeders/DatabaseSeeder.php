@@ -19,7 +19,6 @@ class DatabaseSeeder extends Seeder
 
         User::factory()->count(20)->create()->each(function ($user) {
             Product::factory()->count(5)
-                ->hasAttached(Category::inRandomOrder()->first())
                 ->create([
                     'user_id' => $user->id
                 ]);
