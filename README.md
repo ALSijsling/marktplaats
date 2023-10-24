@@ -14,3 +14,4 @@
 - added price
 - added categories
 - added search function
+- added category filter

@@ -5,7 +5,16 @@
     <x-body>
         <div class="py-24 sm:py-32">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                <div class="mx-auto">
+                <div class="flex justify-between">
+                    <!-- Category Filter -->
+                    <div class="group float-left bg-slate-400 rounded-xl hover:bg-slate-500">
+                        <button class="menu-hover p-4">Categories</button>
+                        <div class="absolute invisible rounded-xl shadow bg-slate-400 group-hover:visible z-10">
+                            @foreach(\App\Models\Category::all() as $category)
+                                <a class="block p-4 hover:bg-slate-500" href="{{route('categories.show', ['category' => $category])}}">{{$category->name}}</a>
+                            @endforeach
+                        </div>
+                    </div>
                     <!-- SearchBar -->
                     <form id="searchBar" method="GET" action="#">
                         <x-text-input type="text" name="search" placeholder="Search.." value="{{request('search')}}" />
@@ -28,7 +37,7 @@
                             </div>
                             <div class="flex items-center gap-x-4 text-xs">
                                 <time class="text-gray-500">{{$product->updated_at->toDateString()}}</time>
-                                    <a href="{{route('categories.show', ['category' => $product->category])}}" class="relative z-10 rounded-full bg-slate-200 px-3 py-1.5 font-medium hover:bg-slate-300">{{$product->category}}</a>
+                                    <a href="{{route('categories.show', ['category' => $product->category])}}" class="relative rounded-full bg-slate-200 px-3 py-1.5 font-medium hover:bg-slate-300">{{$product->category}}</a>
                             </div>
                             <div class="group relative">
                                 <p class="mt-4">
