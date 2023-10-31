@@ -7,6 +7,16 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="mb-4">
+                <form method="GET" action="{{route('dashboard')}}">
+                    @csrf
+                    <select class="bg-slate-100 rounded-md border-slate-300 shadow-md" name="sorting">
+                        <option value="created_at">Date</option>
+                        <option value="price">Price</option>
+                    </select>
+                    <button class="ml-2 px-4 py-2 bg-slate-100 rounded-md border-slate-300 shadow-md" type="submit">Sort</button>
+                </form>
+            </div>
             <div class="bg-slate-100 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-600">
                     <ul role="list" class="divide-y divide-slate-300">

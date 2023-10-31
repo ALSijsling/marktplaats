@@ -16,3 +16,4 @@
 - added search function
 - added category filter
 - added pagination
+- added sorting personal dashboard

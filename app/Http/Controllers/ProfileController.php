@@ -12,12 +12,14 @@ use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $user = Auth::user()->id;
 
+        $products = Product::where('user_id', $user)->get()->sortBy($request->sorting);
+
         return view('dashboard', [
-            'products' => Product::where('user_id', $user)->get()
+            'products' => $products
         ]);
     }
 
