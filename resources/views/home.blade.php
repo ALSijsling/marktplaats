@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <x-head></x-head>
- 
+
     <x-body>
         <div class="py-24 sm:py-32">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
@@ -53,6 +53,9 @@
                         </article>
                     @endforeach
                 </div>
+                <div class="mt-8">
+                    {{$products->links()}}
+                </div>              
             </div>
         </div>
     </x-body>

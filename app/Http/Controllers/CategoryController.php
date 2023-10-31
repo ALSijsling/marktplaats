@@ -27,7 +27,7 @@ class CategoryController extends Controller
     public function show(Category $category)
     {
         return view('home', [
-            'products' => Product::where('category', $category['name'])->get()
+            'products' => Product::where('category', $category['name'])->paginate(12)
         ]);
     }
 

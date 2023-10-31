@@ -15,3 +15,4 @@
 - added categories
 - added search function
 - added category filter
+- added pagination
