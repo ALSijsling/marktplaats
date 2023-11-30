@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('image')->default("");
             $table->decimal('price', 6, 2)->default();
             $table->string('category');
+            $table->timestamp('sort_date')->default(now());
             $table->timestamps();
         });
     }

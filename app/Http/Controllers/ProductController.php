@@ -13,7 +13,7 @@ class ProductController extends Controller
     public function index()
     {
         return view('home', [
-            'products' => Product::orderByDesc('created_at')->filter(request(['search']))->paginate(12)
+            'products' => Product::orderByDesc('sort_date')->filter(request(['search']))->paginate(12)
         ]);
     }
 
@@ -28,6 +28,7 @@ class ProductController extends Controller
 
         $attributes['user_id'] = auth()->id();
         $attributes['slug'] = Str::slug($attributes['title']);
+        $attributes['sort_date'] = now();
 
         $product = Product::create($attributes);
 

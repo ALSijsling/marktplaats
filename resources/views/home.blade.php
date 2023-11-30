@@ -25,8 +25,6 @@
                     @foreach ($products as $product)
                         <article class="bg-slate-100 text-gray-600 flex max-w-xl flex-col items-start justify-between p-6 rounded-2xl">
                             <div class="relative mb-6 flex items-center gap-x-4">
-                                <!-- change image -->
-                                <img class="h-10 w-10 rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
                                 <div class="text-sm leading-6">
                                     <a href="/products/{{$product->slug}}">
                                         <h3 class="ml-2 text-lg font-semibold group-hover:text-gray-800">
@@ -36,7 +34,7 @@
                                 </div>
                             </div>
                             <div class="flex items-center gap-x-4 text-xs">
-                                <time class="text-gray-500">{{$product->updated_at->toDateString()}}</time>
+                                <time class="text-gray-500">{{$product->created_at->toDateString()}}</time>
                                     <a href="{{route('categories.show', ['category' => $product->category])}}" class="relative rounded-full bg-slate-200 px-3 py-1.5 font-medium hover:bg-slate-300">{{$product->category}}</a>
                             </div>
                             <div class="group relative">

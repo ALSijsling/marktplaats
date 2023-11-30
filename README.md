@@ -17,3 +17,4 @@
 - added category filter
 - added pagination
 - added sorting personal dashboard
+- added promoting of products
